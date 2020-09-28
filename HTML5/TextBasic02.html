@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TextBasic02</title>
+</head>
+<body>
+
+    <!--
+        u태그 : underline 밑줄
+        i태그 : italic 기울어짐
+        b태그 : strong태그 ,bold 두껍게
+
+        sub: 아래첨자
+        sup : 위첨자
+
+        s,del,strike태그 : 가운데 선
+
+<h> </h> xml에서는 엘리먼트라 부른다
+
+        -inline element(중요)
+        # 인라인 엘리먼트 안에는 블락 엘리먼트를 넣을수없다 ex> 
+        블락엘리먼트안에는 인라인 및 
+        블락 엘리먼트를 넣을 수 있다.
+        
+        @@@ 인라인 엘리먼트는 가로배치
+        @@@ 블락 엘리먼트는 세로배치
+
+        background-color를 사용했을때
+
+        블락은 자기 부모 영역을 전부 차지함
+        인라인은 딱 자기 글자만큼만 차지함
+    -->
+    <h2 style ="background-color: antiquewhite;"? > 블락엘리먼트 구분법</h2>  
+    <div> 
+        <h2>텍스트 꾸미기</h2>
+        <u>밑줄 긋기</u> <br/>
+        <i>이탤릭체</i><br/> <!--- 그냥 냅두면 같은 라인에 표시됨-->
+        <strong>글자 진하게</strong><br/>
+        나의 닉 네임은 <sup>자바 매니아</sup> 입니다.<br/>
+        나의 닉 네임은 <sub>자바 매니아</sub> 입니다.<br/>
+        가격할인 : <strike>10,000원 -> 5,000원</strike> <br/>
+        가격할인 : <strong><strike>10,000원 </strike> </strong>-> 5,000원<br/>
+
+    </div>
+</body>
+</html>
