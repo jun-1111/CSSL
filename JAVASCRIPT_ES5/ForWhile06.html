@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ForWhile06.html</title>
+
+    <script>
+        /*
+        자바 : for문 안에서 선언된 변수는 for문이 끝나면 소멸
+
+        자스 : script태그 안에서 선언된 변수는 해당 페이지 모든 영역에서 사용가능
+        */
+
+        if(true){
+            var num=10;
+        }
+        document.write(num);
+        //if블락 안에있더라도 num을 인식
+
+        if(false){
+            var num=10;
+        }
+        document.write(num);
+        //if문 안에 들어가지 못했을경우에는 해당 변수 인식 불가
+
+
+
+        function a(){
+            var testnum = 11;
+        }
+        //document.write(testnum);//함수내의 변수는 지역변수이므로 인식 불가
+
+
+        
+
+
+        for(var i=0;i<5;i++){
+
+            var gVar = 'for문 안에서 선언된 변수';
+            document.write('i='+i+'<br/>');
+        }
+        document.write('for문이 끝난후 : i='+i+'<br/>')
+
+        
+        
+    </script>
+</head>
+<body>
+    
+    <script>
+        document.write('body태그 안에서 사용 ] for문이 끝난후 : i='+i+'<br/>');
+        // 아주 잘 출력된다
+
+        document.write('<h2>for문으로 출력</h2>');
+        for(var intx =0 ; intx<=4 ;intx++){
+            var sss ='';
+            for(var inty=0;inty<=4; inty++){
+                if(intx ==inty){
+                    sss += '1';
+                }
+                else
+                sss += '0';
+            }
+            document.write(sss+'<br/>');
+        }
+
+        document.write('<h2>while문으로 출력</h2>');
+        var table = "<table style=\"text-align : center;border-spacing:2px;background-color:red;\">";
+
+
+        i=k=0;
+        while(i<5){
+            table+="<tr style='background-color : white'>"
+            while(k<5){
+                if(i==k)
+                    table+="<td>1</td>";
+                else
+                    table+="<td>0</td>";
+                k++;
+            }
+            table+="</tr>";
+            k=0;
+            i++;
+
+        }
+
+        table +="</table>";
+
+        document.write(table);
+
+
+
+
+
+        document.write('<h2>for문으로 구구단 출력</h2>');
+        for(var gx = 1; gx<=9;gx++){
+            for(var gy = 2;gy<=9;gy++){
+                document.write(gy+' * '+gx+' = '+gx*gy+'&nbsp');
+            }
+            document.write('<br/>');
+        }
+
+        
+        document.write('<h2>while문으로 구구단 출력</h2>');
+
+
+
+    </script>
+
+</body>
+</html>

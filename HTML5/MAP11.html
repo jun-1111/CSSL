@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAP11.html</title>
+</head>
+<body>
+    
+
+
+    <!--img랑 반드시 같이 써야한다  @@@@@@@@@@@@@@@@@@@@@@@@-->
+
+    <!--    
+        MAP태그  : img영역을 분할해서 마치 지도처럼 사용하기 위함
+                    즉 영역별로 링크주소를 다르게 걸수 있음
+
+        사용법 : 
+            <map name="img태그의 usemap속성에 지정한 값">        <!-- 
+            <area/>:태그를 이용해서 이미지의 영역 분할
+            </map>
+
+            area태그 : map의 하위태그로 이미지를 분할할때 사용하는 태그
+
+            area태그의 속성 : 
+                    href - 링크 주소 지정
+                    shape - circle(circ), rectangle(rect), polygon(ploy)
+                    coords - shape속성에따라 크기가 정해짐 
+
+            원일때 x,y 반지름 
+            사각형일때 left좌표 top좌표 right좌표 bottom좌표
+            다각형일때 각 꼭지점의 x좌표 y좌표
+
+
+    -->
+    <h2>이미지 맵</h2>
+    <img src="../images/koreazzzzzz1.jpg" alt="대한민국 지도 이미지" usemap="#korea"/>  <!--맵의 이름을 넣을때 #을 뺀 이름을 넣을것--> 
+    <map name="korea"> <<<<<<<<
+        <area href="http://www.seoul.go.kr" shape="circle" coords="214,183,50" alt="서울"/>
+
+        
+        <area href="http://www.busan.go.kr" shape="rect" coords="335,317,431,386" alt="부산"/>
+        <area href="http://www.jeju.go.kr" shape="poly" coords="66,463,101,480,88,506,40,505,30,477" alt="제주도"/>
+
+
+    </map>
+
+
+
+</body>
+</html>

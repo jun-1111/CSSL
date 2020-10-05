@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ObjectMake08_3.html</title>
+
+
+    <script>
+        /*
+            객체(object) - 연관된 속성(변수)이나 행동(함수)를 모아논것
+            
+            자스에서 객체를 만드는 법
+
+            1. 중괄호 사용(Literal 객체)
+
+                var 객체명 = {}; //아무것도없는 빈 객체를 생성
+
+                속성 추가시에는 객체명.속성명 = 값
+                함수 추가시에는 객체명.함수명 = function(){}
+                
+            2. 생성자 함수 사용
+                
+                function 생성자함수명(){
+                    this를 사용해서 속성 설정
+                    //return 안씀
+
+                }
+                -보통 일반함수와 구분하기 위해 함수명을 대문자로 시작 (권장사항)
+                -return문을 안쓴다
+                -생성자 함수에는 주로 속성만 정의한다 
+
+                var 객체명 = new 생성자함수명();
+                -함수는 객체명.prototype.함수명 = function(){}로
+                    별도로 정의한다.
+        
+        */
+       
+       var brace = {}; // new Object(); 와 같다 
+       console.log('brace의 자료형 : %s, brade : ',typeof brace,brace);
+        
+
+        //속성 추가]
+        brace.name = '가길동';
+        brace.age = 20;
+        console.log('brace의 자료형 : %s, brade : ',typeof brace,brace);
+
+
+        console.log(brace.name);
+        console.log(brace.age);
+
+        //함수 추가]
+        brace.print = function(){ //brace에 함수를 추가
+
+            console.log(this); //지금 이 함수를 호출하는건 brace 
+                                //그러므로 this는 brace를 의미
+            console.log(this.name,this.age);
+        };
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Switch.html</title>
+
+
+    <script>
+        /*
+        switch(식):
+
+            자바 : 식이 정수값(byte/short/char/int)dl skdhftn dlTsms
+            정수식(산술식)이거나 문자열(String)이여야 한다 long xx
+
+            
+            자스 : 모든값이 나올수 있는 모든식이 가능하다
+            boolean값도 가능하고 문자열도 가능한다
+
+        */
+        const PI = 3.14;
+        switch(PI){ //자바x
+            
+            case 3.00000000014:
+            case 3.000000014:
+            case 3.0000014:
+            case 3.00014:
+            case 3.14: document.write('PI는 3.14이다');break;
+            default : document.write('PI는 3.14가 아니다');break;
+
+        }
+
+        switch(10 % 2 ==0){//자바x
+            
+            case true: document.write('true다<br/>');break;
+            case false : document.write('false다<br/>');break;
+        }
+
+
+
+        switch('자바'){ //자바 o
+            case '자스' :document.write('자스다');break;
+            case '자바' :document.write('자바다');break;
+            case '자브' :document.write('자브다');break;
+
+        }
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

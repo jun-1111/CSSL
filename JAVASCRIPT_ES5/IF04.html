@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+
+
+
+        var korinput = document.getElementById('kor');
+        var enginput = document.getElementById('eng');
+        var mathinput = document.getElementById('math');
+
+        //span태그(요쇼)객체 얻기
+        var span = document.getElementById('span');
+       
+        function getGrade(){
+            
+            var kor = parseInt(korinput.value);
+            var eng = parseInt(enginput.value);
+            var math = parseInt(mathinput.value);
+            var avg = (kor+eng+math)/3;
+            
+            if(avg>=90) span.innerHTML = 'A학점';
+            else if(avg>=80) span.innerHTML = 'B학점';
+            else if(avg>=70) span.innerHTML = 'C학점';
+            else if(avg>=60) span.innerHTML = 'D학점';
+            else span.innerHTML = 'F학점';
+            span.innerHTML +=':'+avg;
+
+        }
+
+
+
+
+
+
+
+
+        var nullvar = null, num1=num2 =10;
+        
+        if(nullvar) document.write('null은 true다<br/>');
+
+        else document.write('null은 false다<br/>');
+
+        if(num1 - num2) //자바x
+        document.write('참이다<br/>');
+        else
+        document.write('거짓이다<br/>');
+
+
+        /*
+            자바와는 다르게 판단식(모든식)이 참이거나 거짓일때
+            결과값을 변수에 담지 않아도 됨
+
+            방식1]
+            //자바에서는 에러]
+            
+            판단식 ? 참일때 실행할 문장 : 거짓일때 실행할 문장;
+
+            방식2]
+            var 변수 = 판단식 ? 참일때 값 : 거짓일때 값;
+
+        */
+
+        
+        //방식1] 자바에서는 안됨
+        num1 > num2 ? document.write(num1+'은'+num2+'보다 크다<br/>'):document.write(num1+'은'+num2+'보다 크지않다<br/>');
+
+
+        //방식2] 자에서는 됨
+        var result = num1 > num2 ?    num1+'은'+num2+'보다 크다<br/>'   :   num1+'은'+num2+'보다 크지않다<br/>';
+        document.write(result);
+        
+
+       
+
+    </script>
+
+</head>
+<body>
+
+    <fieldset>
+        <legend>성적 출력</legend>
+
+        국어<input type="text" id='kor'/>
+        영어<input type="text" id='eng'/>
+        수학<input type="text" id='math'/>
+
+        <span id="span" style="color:red; font-weight:bold;">여기에 출력</span>
+        <button onclick="getGrade();">확인</button>
+    </fieldset>
+    
+</body>
+</html>

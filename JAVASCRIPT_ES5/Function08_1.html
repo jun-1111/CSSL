@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function08.html</title>
+
+    <script>
+        /*
+        [함수정의]
+
+        방법1] 함수 선언문(유명함수)
+        function 함수명([매개변수1,매개면수2...]){ var사용 불가 즉 매개변수 정의시 변수 타입지정불가
+            함수가 할일을 구현
+
+            [return 변수혹은 값];
+
+            # return이후의 명령문은 실행이 안됨
+            # 단, return이후에 뭘 적어도 신택스 에러는 안남
+
+
+
+        방법2] 함수 표현식(익명함수)
+        var 변수명 = function([매개변수1,매개변수2....]){
+            함수가 할일 구현;
+            [return 변수 혹은 값];
+        }
+        # 함수 표현식이라고도 불린다
+
+
+
+        방법3] 즉시 실행함수
+        (function [함수명 생략가능](매개변수1,매개변수2....){
+            할일
+            [return asdf];
+        }) ([매개변수1,매개변수2,..])
+        # 정의와 동시에 괄호 밖의 파라미터를 통하여 즉시 실행할수있다
+
+
+        @@ 함수안에서 선언된 변수는 함수호출이 끝나면 메모리에서 사라진다 즉 지역변수이다 @@
+
+        */
+
+
+        //함수정의 - 함수선언문
+        
+        function noParamNoreturn(){
+            document.write('===========Menu==============<br/>');
+            document.write('1.계속 2.나가기<br/>');
+            document.write('=============================<br/>');
+        }
+
+        document.write('noParamNoreturn의 자료형 : '+typeof noParamNoreturn + '<br/>');
+        document.write('noParamNoreturn : '+noParamNoreturn+'<br/>');
+        //함수 전문 출력
+        
+        noParamNoreturn();//함수 호출
+
+
+
+        //=====================================================================================
+        //함수형식2]
+        //함수정의 - 함수표현식 (익명함수)
+
+        var yesParmNoReturn  = function(start,end){
+            var total = 0; //함수 안에서 선언된 지역변수
+            
+            for(var i= start ; i<= end ; i++){
+                total += i;
+            }
+            document.write(start+' 부터 '+end+' 까지 의 누적합 : '+total+'<br/>');
+        };
+        
+        document.write('yesParmNoReturn의 자료형 : '+typeof yesParmNoReturn + '<br/>');
+        document.write('yesParmNoReturn : '+yesParmNoReturn+'<br/>');
+        //함수 전문 출력
+
+
+        //함수 호출]
+        yesParmNoReturn(1,10);
+        yesParmNoReturn(10,100);
+
+
+
+        /*
+            전역변수 : 스크립트 태그안에 선언된 변수로 해당 페이지 어디에서나 사용 가능
+            지역변수 : 함수안에 선언된 변수로 함수밖에서는 소멸함
+        */
+
+        //document.write('함수안에서 선언된 변수 : '+total+'<br/>');
+        //document.wirte('asdf');
+        //## 에러가나면 프로그램 중지 밑에 asdf는 출력이 안됨 ## <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+        //정의되지 않았다고 오류남 
+
+        var noParamYesReturn = function(){
+            var name = prompt('이름 입력 : ','');
+            var age = prompt('나이 입력 : ',20);
+            return '이름 : '+name+ ',나이'+age;
+            document.write('return문 이후의 출력문');
+        };
+
+        //함수 호출
+        //document.write(noParamYesReturn);
+        //위 코드는 함수 전문을 출력
+
+
+        //document.write(noParamYesReturn()+'<br/>');
+
+        //함수형식 4]
+
+        function yesParmYesReturn(num1,num2){
+            return num1>num2 ? num1 : num2;
+        }
+
+        document.write('최대값'+yesParmYesReturn(10,20)+'<br/>');
+
+
+        //즉시 실행함수
+        var plus = (function immediate(num1,num2){return num1+num2})(10,20);
+        
+        document.write('plus의 자료형 : '+typeof plus+'<br/>');
+        document.write('plus의 결과값 : '+plus+'<br/>');
+
+        //document.write(immediate(1,2)+'<br/>'); //[x]
+        //즉시실행함수는 별도의 이름을 만들었다고해서 부르지 못함
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

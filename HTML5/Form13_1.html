@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form13_1</title>
+</head>
+<body>
+    
+
+
+    <!-- form태그 : 사용자가 입력한 값 혹은 선택한 값을 서버로 전송하는 태그
+        host방식과 get방식이있다
+
+        기존 a태그방식은 get방식 밖에없다 
+    -->
+
+
+    <!-- 포트는 서버 프로그램을 구분하는 번호
+        http는 80  
+    
+    -->
+
+
+    <!-- 오라클로 대입하면
+    get방식은 셀렉트 
+    post는 인설트
+    patch는 업데이트
+    delete는 딜리트 -->
+
+
+    <!-- action을 생략하면 기본값은 자신의 페이지-->
+
+    <!--method를 아무것도 지정하지 않으면 default값은 get방식-->
+
+    <div>
+        <h2>form태그로 데이터 전송하기</h2>
+
+        <h3>GET방식으로 요청</h3>
+        <form action = 'https://www.naver.com'>
+            아이디 : <input type = "text" name = 'user'/>
+       
+            비밀번호 : <input type = "password" name="pass"/>
+            <input type="submit" value="로그인"/>
+        </form><!-- form태그도 블락엘리먼트-->
+
+        <h3>POST방식으로 요청</h3>
+        <form action = 'https://www.naver.com' method="post">
+            아이디 : <input type = "text" name = 'user'/>
+       
+            비밀번호 : <input type = "password" name="pass"/>
+            <input type="submit" value="로그인"/>
+        </form><!-- post방식은 url에 아이디 비밀번호가 노출되지 않는다-->
+
+        <h3>action속성으로 (현재 페이지 다시 요청) /method속성 생략</h3>
+        <form >
+            아이디 : <input type = "text" name = 'user'/>
+            비밀번호 : <input type = "password" name="pass"/>
+            전화번호 : <input type="tel" name="tel"/>
+            이메일 : <input type="email" name="email"/>
+
+            <input type="submit" value="로그인"/>
+        </form>
+
+
+        <h3>a태그로 데이터전송(get방식)</h3>
+        <a href="https://www.naver.com?user=KIM&pass=9999">GET방식</a>
+
+
+        
+    </div>
+</body>
+</html>
