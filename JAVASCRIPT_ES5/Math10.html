@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math10.html</title>
+
+
+    <script>
+        /*
+            Math.함수명() 식으로 호출한다 
+        */
+
+        //1. abs():절대값
+        console.log('-10의 절대값 : '+Math.abs(-10));
+
+        //2. pow():지수
+        console.log('2^3 : '+Math.pow(2,3));
+
+        //3. round() : 반올림 - 소수점 첫째자리 에서 반올림
+        console.log('3.159 반올림 : '+Math.round(3.159));
+
+        //4. ceil() : 올림
+        console.log('3.159 올림 : '+Math.ceil(3.159));
+
+        //5. floor() : 내림
+        console.log('3.9 내림 : '+Math.floor(3.9));
+
+
+        //6. random() : 0 부터 1사이의 값을 랜덤하게 발생
+
+        /*
+
+            1부터 5사이의 숫자를 랜덤하게 발생
+            범위 : 5-1 = 4
+            시작값 : 1
+
+            parseInt(Math.random()*4)+1 : 마지막값 5는 포함안됨
+
+            parseInt(Math.random()*5)+1 : 마지막값 5도 포함됨
+        */
+
+        console.log(Math.random());
+        console.log(parseInt(Math.random()*5)+1);
+
+        var lotto=new Array(6);
+
+        function setRandomNumber(random,start,end){
+
+            for(var i=0; i < random.length;i++) {
+                while(true){
+                    var randomNumber = parseInt((Math.random()*(end-start+1))+start);
+
+                    var isDuplicated = false;
+
+                    for(var k=0;k <=i-1;k++) {
+                            if(randomNumber==random[k]) {//중복된 경우
+                                isDuplicated=true;
+                                break;
+                            }
+                    }/////////중복 체크용 for문	    
+
+				    if(!isDuplicated) {//중복되지 않는 경우
+					    random[i]=randomNumber;
+					    break;//while문 빠져 나가기
+				    }				
+			    
+			    }	
+		
+		    }
+            return random;
+	    }
+        document.write(setRandomNumber(lotto,1,45));
+
+
+
+    </script>
+    
+
+
+
+</head>
+<body>
+
+    <fieldset>
+
+        <legend>로또 발생기</legend>
+        <button onclick="showLottoNumer();">로또 발생</button>
+        <span  id = 'lotto' style="font-size:2em ;color: red;"></span>
+
+    </fieldset>
+    <script>
+        var span = document.getElementById('lotto');
+
+        function showLottoNumer(){
+            lotto =new Array(6);
+            setRandomNumber(lotto,1,45);
+            var lottoNumber = '<div><table><tr>';
+
+            lotto.forEach(function(item){
+                lottoNumber += '<td>'+item +'&nbsp</td>';
+
+            });
+            lottoNumber += '</tr></table></div>';
+            span.innerHTML = lottoNumber; //span영역에 string으로 보내야한다?
+        }
+
+    </script>
+</body>
+</html>
