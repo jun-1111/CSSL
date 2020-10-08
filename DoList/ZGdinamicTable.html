@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>동적테이블 생성</title>
+  <script>
+    function main(a1, a2) {
+      var tag = "<table border='1'>";
+      var b1 = parseInt(a1);
+      var b2 = parseInt(a2);
+
+      
+      for (j = 1; j <= b1; j++) {
+        tag += "<tr>";
+        for (i = 1; i <= b2; i++) {
+          tag += "<td>"+j+"."+i+"</td>";
+        }
+        tag += "</tr>";
+      }
+      tag += "</table>";
+      area.innerHTML = tag;
+    }
+    
+  </script>
+</head>
+<body>
+  행(row) : <input type="number" id="txt1"><br/>
+  열(col) : <input type="number" id="txt2">
+  <button onclick="main(txt1.value, txt2.value)">enter</button>
+  <hr/>
+  <div id="area"></div>
+</body>
+</html>
