@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Window14_1.html</title>
+
+
+    <script>
+
+        var fn = {
+            longin:function(){
+                //메세지 대화상자를 뿌려줌 : window.alert ("뿌려줄 메세지") window.는 생략?
+                var userText = document.getElementById('user');
+                
+                if(uerText.value == ''){
+                    alert('아이디를 입력하세요')
+                }
+
+                //포커스
+                userText.focus();
+            },
+            drop:function(){
+                
+                //삭제하기전에 사용자에게 한번 더 물어봄
+                //window.confirm("확인메세지")
+                var flag = window.confirm("정말로 삭제하시겠습니까?");//삭제하면 true를 반환
+                if(flag == true){
+                    //컨펌메세지에서 확인을 눌러서 true를 반환햇으면 삭제
+                    console.log('퇴실처리 되었어요');
+                }
+
+            },
+            //입력 대화상자 : String window.prompt("메세지","기본값");
+            insertName:function(){
+                var name = prompt("이름을 입력하세요",'');
+                alert('당신의 이름은 \r\n'+name+' 이군요');
+                //alert(`당신의 이름은 ${name}입니다. `); 민정씨 추천방법 
+                
+            },
+            insertAge:function(age){
+                var inputAge = prompt("나이를 입력하세요",age);
+                alert('당신의 10년후 나이는\r\n'+(parseInt(inputAge)+10)+'입니다');
+            }
+            };
+
+
+
+
+
+    </script>
+
+
+</head>
+<body>
+    <fieldset>
+
+        <legend>대화 상자들</legend>
+        
+        아이디 <input type="text" id="user" />
+        
+        <input type="button" value="로그인" onclick="fn.login()" />
+        
+        <input type="button" value="삭제" onclick="fn.drop()" />
+        
+        <input type="button" value="입력" onclick="fn.insertName()" />
+        
+        <input type="button" value="나이입력" onclick="fn.insertAge(20)" />
+        
+    </fieldset>
+
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LocationHistory13.html</title>
+
+
+    <script>
+        console.log(typeof window.location);
+        console.log('%O',location);
+
+        console.log(location.href); //href 속성 출력
+        console.log(location.protocol);
+        console.log(location.port);
+
+        // ~. abc 로 ~에 담겨있는 변수를 꺼낼수있다  ### 마치 클래스.변수명 처럼
+
+        //location.href = "http://www.nate.com:80"; //주석을 풀고 코드를 실행시키면 바로 네이트로 이동함
+        //window.location.href 최상위 마스터인 윈도우의 location의 href주소속성을 nate로 주면 네이트로 바로 이동 @@@@@@@@@@@@@@@
+
+
+
+
+        function fnLogin(){
+
+            var user = document.getElementById('user').value;
+            var pass = document.getElementById('pass').value;  //바로 변수에 value를 읽어온다
+
+
+            //가정 회원아이디가 kim 비번이 1234 이면 회원
+            // 회원이면 마이페이지로 이동
+            // 회원이 아니면 회원가입 페이지로 이동
+
+            if(user == 'KIM' && pass == '1234'){
+                //회원인 경우 마이페이지로 자동 이동시키고
+                //location.href="IF04.html";
+
+                location.replace("IF04.html");
+                //replace로 하면 뒤로가기 불가
+            }
+
+            else{
+
+                //비회원인 경우 회원가입페이지로 이동시킴
+                //location.href="ForWhile06.html";
+                location.replace("ForWhile06.html");
+                //replace로 하면 뒤로가기 불가
+
+            }
+            //########33  location.reload() 를 사용하면 현재 페이지를 다시 리로드 
+            //              history.back() 를 사용하면 이전페이지
+            //              history.go(1)를 사용하면 다음페이지 (숫자를 늘리면 다음다음페이지)
+                            // -1를 사용하면 이전페이지 (잘 사용안하고 대부분 back를 사용)
+
+            // alert(navigator.userAgent) 를 호출하면 
+            //Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.121 Safari/537.36
+            //                                                                                    ㄴ 크롬 
+
+
+        }
+        
+
+
+
+    </script>
+
+
+
+
+</head>
+
+<body>
+    <h2>location & history & navigator객체</h2>
+
+    <fieldset>
+
+        <legend>로그인 화면</legend>
+
+        아이디 <input type="text" id="user" />
+
+        비밀번호 <input type="password" id="pass" />
+
+        <input type="button" value="로그인" onclick="fnLogin();" />
+
+        <input type="button" value="새로고침" onclick="location.reload()" />
+
+        <input type="button" value="history테스트" onclick="location.href = 'Operator02.html';" />
+
+        <input type="button" value="이전 페이지" onclick="history.back()" />
+
+        <input type="button" value="다음 페이지" onclick="history.go(1)" />
+
+        
+
+        <input type="button" value="웹브라우저 종류" onclick="alert(navigator.userAgent)" />
+
+    </fieldset>
+</body>
+
+</html>
